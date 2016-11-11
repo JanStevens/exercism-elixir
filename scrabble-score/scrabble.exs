@@ -16,8 +16,8 @@ defmodule Scrabble do
   def score(word) do
     word
       |> String.graphemes
-      |> Enum.map(&(String.downcase/1))
-      |> Enum.map(&(lookup_score/1))
+      |> Enum.map(&String.downcase/1)
+      |> Enum.map(&lookup_score/1)
       |> Enum.sum
   end
 
