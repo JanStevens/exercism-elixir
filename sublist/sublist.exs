@@ -17,9 +17,7 @@ defmodule Sublist do
     cond do
       sub_count > Enum.count(full) -> false
       Enum.take(full, sub_count) === sub -> true
-      true ->
-        [_ | t] = full
-        contains?(t, sub)
+      true -> contains?(tl(full), sub)
     end
   end
 end
